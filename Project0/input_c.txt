@@ -1,0 +1,252 @@
+  // solution.streamOut(solution);   
+  // stream out the stack 0 0 0 
+  // location = 0 1 because its the next neighbor direction is right 
+  // stream out the stack 0 0 1 
+  // location is now 0 1 4 
+  //Location loc = solution.getTop().nextNeighbor();
+  /*loc.streamOut();
+  if(maze.isValidLocation(loc)) {
+    loc.start();
+    solution.push(loc);
+  }
+
+  solution.getTop().streamOut();
+  loc.streamOut();*/
+
+call read_input
+call abs
+return shit
+
+ if(!solution.isEmpty() && !maze.isEndLocation(solution.getTop())) {
+    solution.getTop().streamOut();
+    Location loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true1");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+        solution.pop();
+    loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true2");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+      solution.pop();
+    loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true3");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+      solution.pop();
+    loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true4");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+      solution.pop();
+    loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true5");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+      solution.pop();
+    loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true6");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+      solution.pop();
+    System.out.println(maze.isEndLocation(solution.getTop()));
+    if(solution.isEmpty()) {
+    System.out.println("No solutions found.");
+    }
+    else if(!solution.isEmpty() && maze.isEndLocation(solution.getTop())){
+    System.out.println("Solution found:");
+    solution.streamOut(solution); 
+  }
+  }
+
+  INPUT 3 
+
+  /*  if(!solution.isEmpty() && !maze.isEndLocation(solution.getTop())) {
+    solution.getTop().streamOut();
+    Location loc = solution.getTop().nextNeighbor(); 
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+        solution.pop();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+        solution.pop();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc) && !solution.isOn(loc)) {
+      System.out.println("true\n");
+      loc.start();
+      solution.push(loc);
+    }
+    else if(maze.isValidLocation(loc) && solution.isOn(loc)) 
+        solution.pop();
+    solution.streamOut(solution);
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+      System.out.println("true\n");
+      loc.start();
+      solution.push(loc);
+      }
+      else  
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+      System.out.println("true\n");
+      loc.start();
+      solution.push(loc);
+      }
+      else  
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    solution.streamOut(solution);
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    solution.streamOut(solution);
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println();
+    loc = solution.getTop().nextNeighbor();
+    loc.streamOut();
+    if(maze.isValidLocation(loc)) {
+      if(!solution.isOn(loc)) {
+        System.out.println("true\n");
+        loc.start();
+        solution.push(loc);
+      }
+      else 
+        solution.pop();
+    }
+    System.out.println(!solution.isEmpty() && !maze.isEndLocation(solution.getTop()));
+
+    if(solution.isEmpty()) {
+    System.out.println("No solutions found.");
+    }
+    else if(!solution.isEmpty() && maze.isEndLocation(solution.getTop())) {
+      System.out.println("Solution found:");
+      solution.streamOut(solution); 
+    }
+   }
+  }
+}*/

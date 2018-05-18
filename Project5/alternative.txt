@@ -1,0 +1,117 @@
+Process newInput = new Process(processID);
+  newInput.streamIn(input);
+    if(currentClock >= time && time != nextTime) {
+      time = nextTime;
+      processHeap.insert(newInput);
+      min = processHeap.getMinItem();
+      //System.out.println(processHeap.getMinProcessID()); //Displays 0?
+      if (min.canComplete(currentClock)) {
+        System.out.println("running process id " + min.getId() + " at " + min.run(currentClock));
+        System.out.println(min.getInformation());
+        currentClock = currentClock + min.getRequiredTime();
+        processHeap.removeMinItem();
+        runProcess++;
+        if (input.hasNextInt()) {
+          nextTime = input.nextInt();
+        }
+      } else if (!min.canComplete(currentClock)) {
+        System.out.println("skipping process id " + min.getId() + " at " + min.run(currentClock));
+        currentClock = currentClock + 1;
+        processHeap.removeMinItem();
+        skippedProcess++;
+        if (input.hasNextInt()) {
+          nextTime = input.nextInt();
+        }
+      }
+    }
+    processID++;
+    Process new1Input = new Process(processID);
+    new1Input.streamIn(input);
+    if(currentClock >= time && time != nextTime) {
+      time = nextTime;
+      processHeap.insert(new1Input);
+      min = processHeap.getMinItem();
+      if (min.canComplete(currentClock)) {
+        System.out.println("running process id " + min.getId() + " at " + min.run(currentClock));
+        System.out.println(min.getInformation());
+        currentClock = currentClock + min.getRequiredTime();
+        processHeap.removeMinItem();
+        runProcess++;
+        if (input.hasNextInt()) {
+          nextTime = input.nextInt();
+        }
+      } else if (!min.canComplete(currentClock)) {
+        System.out.println("skipping process id " + min.getId() + " at " + min.run(currentClock));
+        currentClock = currentClock + 1;
+        processHeap.removeMinItem();
+        skippedProcess++;
+        if (input.hasNextInt()) {
+          nextTime = input.nextInt();
+        }
+      }
+    }
+    processID++;
+    Process new2Input = new Process(processID);
+    new2Input.streamIn(input);
+
+      processHeap.insert(new2Input);
+      System.out.println("insert id2");
+      if (input.hasNextInt()) {
+        nextTime = input.nextInt();
+      }
+
+    processID++;
+    Process new3Input = new Process(processID);
+    new3Input.streamIn(input);
+      processHeap.insert(new3Input);
+      System.out.println("insert id3");
+      if (input.hasNextInt()) {
+        nextTime = input.nextInt();
+      }
+
+    processID++;
+    Process new4Input = new Process(processID);
+    new4Input.streamIn(input);
+    processHeap.insert(new4Input);
+    min = processHeap.getMinItem();
+
+    if(processHeap.getNumItems() > 0) {
+      while (processHeap.getNumItems() != 0) {
+        min = processHeap.getMinItem();
+        System.out.println(processHeap.getMinProcessID());
+        if (min.canComplete(currentClock)) {
+          System.out.println("running process id " + min.getId() + " at " + min.run(currentClock));
+          System.out.println(min.getInformation());
+          currentClock = currentClock + min.getRequiredTime();
+          processHeap.removeMinItem();
+          runProcess++;
+        } else if (!min.canComplete(currentClock)) {
+          System.out.println("skipping process id " + min.getId() + " at " + min.run(currentClock));
+          currentClock = currentClock + 1;
+          processHeap.removeMinItem();
+          skippedProcess++;
+        }
+      }
+      if(input.hasNextInt())
+        nextTime = input.nextInt();
+    }
+
+        /*if(processHeap.getNumItems() > 0) {
+          while (processHeap.getNumItems() != 0) {
+            min = processHeap.getMinItem();
+            if (min.canComplete(currentClock)) {
+              System.out.println("running process id " + min.getId() + " at " + min.run(currentClock));
+              System.out.println(min.getInformation());
+              currentClock = currentClock + min.getRequiredTime();
+              processHeap.removeMinItem();
+              runProcess++;
+            } else if (!min.canComplete(currentClock)) {
+              System.out.println("skipping process id " + min.getId() + " at " + min.run(currentClock));
+              currentClock = currentClock + 1;
+              processHeap.removeMinItem();
+              skippedProcess++;
+            }
+          }
+          if(input.hasNextInt())
+            nextTime = input.nextInt();
+        }*/
